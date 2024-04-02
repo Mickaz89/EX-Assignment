@@ -1,10 +1,5 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-
-interface Cocktail {
-  idDrink: string;
-  strDrink: string;
-  strDrinkThumb: string;
-}
+import { Cocktail } from '../interfaces';
 
 interface CocktailsState {
   cocktails: Cocktail[];

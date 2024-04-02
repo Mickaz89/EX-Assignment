@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Box, Modal, Typography } from '@mui/material';
+import { Modal, Typography } from '@mui/material';
 import { ModalBody } from './styles';
 
 interface CocktailModalProps {

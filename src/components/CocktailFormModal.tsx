@@ -57,7 +57,7 @@ const CocktailFormModal: FC<CocktailFormModalProps> = ({ open, handleClose }) =>
             return;
         }
 
-        // Delay the execution of the code by 2 seconds
+        // Delay the execution of the code by 1 second in order to see the loading spinner
         setTimeout(() => {
             // Export cocktail data as JSON file
             const cocktailData = { name, description, ingredients };
@@ -67,7 +67,7 @@ const CocktailFormModal: FC<CocktailFormModalProps> = ({ open, handleClose }) =>
             setSuccess(true);
             setLoading(false);
             resetForm();
-        }, 2000);
+        }, 1000);
     };
 
     const IngredientFields = ingredients.map((ingredient, index) => (
