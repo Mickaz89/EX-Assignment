@@ -26,10 +26,17 @@ const initialState: CocktailsState = {
 
 export const fetchCocktails = createAsyncThunk(
   'cocktails/fetchCocktails',
-  async (search: string) => {
-    const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${search}`);
-    const data = await response.json();
-    return data.drinks as Cocktail[];
+  async (search: string, { rejectWithValue }) => {
+    try {
+      const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${search}`);
+      const data = await response.json();
+      return data.drinks as Cocktail[];
+    } catch (error) {
+      if (error instanceof Error) {
+        return rejectWithValue(error.message);
+      }
+      return rejectWithValue('An unknown error occurred');
+    }
   }
 );
 
@@ -45,10 +52,10 @@ const cocktailsSlice = createSlice({
       state.open = true
     },
     handleOpen: (state) => {
-        state.open = true
+      state.open = true
     },
     handleClose: (state) => {
-        state.open = false
+      state.open = false
     }
   },
   extraReducers: (builder) => {

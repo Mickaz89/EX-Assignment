@@ -1,5 +1,5 @@
 import { FC, useState } from 'react';
-import { Box, Modal, TextField, Button, CircularProgress, Typography, IconButton } from '@mui/material';
+import { Modal, TextField, Button, CircularProgress, Typography, IconButton } from '@mui/material';
 import { saveAs } from 'file-saver';
 import { AddCircleOutlineOutlined } from '@mui/icons-material';
 import { AddIngredientButton, IngredientsBox, ModalBody } from './styles';
@@ -11,9 +11,6 @@ interface CocktailFormModalProps {
 
 const styles = {
     mt3: { mt: 3 },
-    centerBox: { display: "flex", justifyContent: "center", mt: 3 },
-    ingredientsBox: { display: 'flex', flexDirection: 'column', maxHeight: '300px', overflow: 'auto' },
-    modalBox: { width: 400, padding: 4, bgcolor: 'background.paper', m: 2, mx: 'auto', mt: 10 }
 };
 
 const CocktailFormModal: FC<CocktailFormModalProps> = ({ open, handleClose }) => {

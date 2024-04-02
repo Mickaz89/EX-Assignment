@@ -7,7 +7,7 @@ interface CocktailGridProps {
   handleOpen: (cocktail: any) => void;
 }
 
-const CocktailGrid: FC<CocktailGridProps> = ({ cocktails, handleOpen }) => (
+const CocktailsGrid: FC<CocktailGridProps> = ({ cocktails, handleOpen }) => (
   <Grid mt={1} container spacing={3}>
     {cocktails.map((cocktail: any, index) => (
       <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
@@ -26,4 +26,4 @@ const CocktailGrid: FC<CocktailGridProps> = ({ cocktails, handleOpen }) => (
   </Grid>
 );
 
-export default CocktailGrid;
+export default CocktailsGrid;
